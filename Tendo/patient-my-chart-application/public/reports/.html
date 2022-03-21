@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+                    <html lang="en" dir="ltr">
+                    <!DOCTYPE html>
+                    <title>Example</title>
+                    <style>
+                          pre {
+                           overflow-x: auto;
+                           white-space: pre-wrap;
+                           white-space: -moz-pre-wrap;
+                           white-space: -pre-wrap;
+                           white-space: -o-pre-wrap;
+                           word-wrap: break-word;
+                        }
+                        table.roundedCorners {
+                            border: 1px solid DarkOrange;
+                            border-radius: 13px;
+                            border-spacing: 0;
+                        }
+
+                        table.roundedCorners td,
+                        table.roundedCorners th {
+                            border-bottom: 1px solid DarkOrange;
+                            padding: 10px;
+                        }
+
+                        table.roundedCorners tr:last-child > td {
+                            border-bottom: none;
+                        }
+
+                        table {
+                            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+                        }
+                    </style>
+                    <table widht="300px" class="roundedCorners">
+                        <tr>
+                            <td width=600px><font size=2 color="gray">JIRA Number :&nbsp; </font> <b></b></td>
+                            <td width=1500px><font size=2 color="gray"> Associate Id :&nbsp;</font> <b>VK038773</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><font size=2 color="gray">Description :&nbsp; </font> <b></b></td>
+                        </tr>
+                        <tr>
+                            <td colspan=2><font size=2 color="gray">Document Created :&nbsp; </font> <b>4/15/2020, 5:30:51 PM [EST]</b></td>
+                        </tr>
+                    </table> <br>
+                  <table class="roundedCorners" align="center" style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
+                      <tr>
+                          <td colspan="2" align="center"><b><font size=4 color="blue">POST</font></b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">Test Status :</font></td>
+                          <td width=85%></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Comments : </font></td>
+                          <td width=85%><pre><code><font face="Courier New"><font size=4 color="gray"></font></font></code></pre></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Solution / Component : </font></td>
+                          <td width=85%><b>condition-identification-pipelines</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Environment </font></td>
+                          <td width=85%><b>devhealtheintent</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Execution Time </font></td>
+                          <td width=85%><b>3/27/2020, 4:19:21 PM</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">URL<font></td>
+                          <td style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><b>https://condition-identification-pipelines.us.devhealtheintent.net/coordinator-default-settings</b></td>
+                      </tr><tr> <td><font size=4 color="gray">Request Body</font></td>
+                          <td>
+                               <pre>
+                              <code>{
+	"tenant": {
+		"id": "336f411a-0a9a-11e8-9dc2-587234aecbf0"
+	},
+	"clusterDetails": {
+		"workflow": {
+			"id": "odin-hdfs"
+		},
+		"hBase": [
+			{
+				"id": "odin-hdfs"
+			},
+			{
+				"id": "ganon-hdfs"
+			}
+		]
+	},
+	"fileSystems": [
+		{
+			"id": "odin-hdfs"
+		},
+		{
+			"id": "cerner-healtheintent-us-1-zone1-cohortprocessing-prod"
+		}
+	],
+	"vertica": {
+		"mainSchemaName": "CIDMAINSCHEMA"
+	},
+	"frequency": {
+		"value": 8,
+		"unit": "HOURS",
+		"dayOfMonth": 1,
+		"timeOfDay": "00:00",
+		"startTime": "2019-11-25T16:19:54.000Z"
+	},
+	"urls": [
+		{
+			"name": "hue",
+			"uri": "http://44.128.76.92:8888/beeswax"
+		},
+		{
+			"name": "oozie",
+			"uri": "http://oozie.ganon-hdfs.cernersphere-kc.net:11000/oozie"
+		},
+		{
+			"name": "chops",
+			"uri": "https://phservices.healtheintent.net/chops"
+		},
+		{
+			"name": "hive",
+			"uri": "thrift://hivemetastore.ganon-hdfs.cernersphere-kc.net:9083"
+		}
+	],
+	"createdBy": {
+		"id": "26fcddb0-0b6f-4cbd-b292-43db0cc20230"
+	}
+}</code>
+                              </pre> 
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">Request Status<font></td><td><b><font size=2 color="red"><b>400 Bad Request</b></font></b></td></tr><tr> <td><font size=4 color="gray">Response Time<font></td><td><b>0.581 seconds</b></td></tr><tr> <td><font size=4 color="gray">Header Location</font></td>
+                          <td><b>undefined</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">Response Body</font></td>
+                          <td style=" padding: 15px word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
+                               <pre>
+                          <code>{
+	"code": 400,
+	"message": "coordinator_setting creation failed",
+	"errorDetails": [
+		{
+			"location": "tenantId",
+			"message": "tenantId must be unique"
+		}
+	]
+}</code>
+                          </pre> 
+                          </td>
+                      </tr>
+                  </table><br>
+                  <table class="roundedCorners" align="center" style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
+                      <tr>
+                          <td colspan="2" align="center"><b><font size=4 color="blue">POST</font></b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">Test Status :</font></td>
+                          <td width=85%></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Comments : </font></td>
+                          <td width=85%><pre><code><font face="Courier New"><font size=4 color="gray"></font></font></code></pre></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Solution / Component : </font></td>
+                          <td width=85%><b>condition-identification-pipelines</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Environment </font></td>
+                          <td width=85%><b>devhealtheintent</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray"> Execution Time </font></td>
+                          <td width=85%><b>3/27/2020, 4:20:24 PM</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">URL<font></td>
+                          <td style="word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;"><b>https://condition-identification-pipelines.us.devhealtheintent.net/coordinator-default-settings</b></td>
+                      </tr><tr> <td><font size=4 color="gray">Request Body</font></td>
+                          <td>
+                               <pre>
+                              <code>{
+	"tenant": {
+		"id": "e92ca89f-8524-451a-9346-666d6ff39329"
+	},
+	"clusterDetails": {
+		"workflow": {
+			"id": "odin-hdfs"
+		},
+		"hBase": [
+			{
+				"id": "odin-hdfs"
+			},
+			{
+				"id": "ganon-hdfs"
+			}
+		]
+	},
+	"fileSystems": [
+		{
+			"id": "odin-hdfs"
+		},
+		{
+			"id": "cerner-healtheintent-us-1-zone1-cohortprocessing-prod"
+		}
+	],
+	"vertica": {
+		"mainSchemaName": "CIDMAINSCHEMA"
+	},
+	"frequency": {
+		"value": 8,
+		"unit": "HOURS",
+		"dayOfMonth": 1,
+		"timeOfDay": "00:00",
+		"startTime": "2019-11-25T16:19:54.000Z"
+	},
+	"urls": [
+		{
+			"name": "hue",
+			"uri": "http://44.128.76.92:8888/beeswax"
+		},
+		{
+			"name": "oozie",
+			"uri": "http://oozie.ganon-hdfs.cernersphere-kc.net:11000/oozie"
+		},
+		{
+			"name": "chops",
+			"uri": "https://phservices.healtheintent.net/chops"
+		},
+		{
+			"name": "hive",
+			"uri": "thrift://hivemetastore.ganon-hdfs.cernersphere-kc.net:9083"
+		}
+	],
+	"createdBy": {
+		"id": "26fcddb0-0b6f-4cbd-b292-43db0cc20230"
+	}
+}</code>
+                              </pre> 
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">Request Status<font></td><td><b><font size=2 color="red"><b>400 Bad Request</b></font></b></td></tr><tr> <td><font size=4 color="gray">Response Time<font></td><td><b>0.481 seconds</b></td></tr><tr> <td><font size=4 color="gray">Header Location</font></td>
+                          <td><b>undefined</b></td>
+                      </tr>
+                      <tr>
+                          <td><font size=4 color="gray">Response Body</font></td>
+                          <td style=" padding: 15px word-wrap: break-word; overflow-wrap: break-word; word-break: break-word;">
+                               <pre>
+                          <code>{
+	"code": 400,
+	"message": "coordinator_setting creation failed",
+	"errorDetails": [
+		{
+			"location": "tenantId",
+			"message": "tenantId must be unique"
+		}
+	]
+}</code>
+                          </pre> 
+                          </td>
+                      </tr>
+                  </table>
+
+                    </html>

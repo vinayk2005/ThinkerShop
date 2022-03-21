@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<meta http-equiv="refresh" content="600"> -->
+<head>
+  <title> MY CHART &#174;</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel = "icon" href = "images/favicon-32x32.png" type = "image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/report.css">
+  
+  <link rel="stylesheet" href="css/bootstrap-select.css">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/f4e64b7c17.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  <script src="javascripts/jscolor.js"></script>
+  <script src="javascripts/report.js"></script>
+  
+
+<style>
+  body {
+  
+  {{!-- background-image: url('images/chart.jpg'); --}}
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  {{!-- background-size: cover; --}}
+  background-size: 1000px 1000px;
+  background-position: right;
+}
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(72, 67, 67, 0.75);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  text-align: top;
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+
+.cross {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 26px;
+  color: #c5bebe;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 550px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+
+div.dropdown-menu.open{
+  max-height: 314px !important;
+  overflow: hidden;
+}
+ul.dropdown-menu.inner{
+  max-height: 260px !important;
+  overflow-y: auto;
+}
+.pointer{
+  cursor:pointer;
+}
+
+body{margin-top:20px;
+background-color: #eee;
+}
+
+.search-result-categories>li>a {
+    color: #b6b6b6;
+    font-weight: 400
+}
+
+.search-result-categories>li>a:hover {
+    background-color: #ddd;
+    color: #555;
+    
+}
+
+.search-result-categories>li>a>.glyphicon {
+    margin-right: 5px
+}
+
+.search-result-categories>li>a>.badge {
+    float: right
+}
+
+.search-results-count {
+    margin-top: 5px
+}
+
+.search-result-item {
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.954);
+    border-radius: 4px
+}
+
+.search-result-item:after,
+.search-result-item:before {
+    content: " ";
+    display: table
+}
+
+.search-result-item:after {
+    clear: both
+}
+
+
+@media (min-width:368px) {
+    .search-result-item .image-link {
+        display: inline-block;
+        margin: -20px -10px -20px 1px;
+        float: left;
+        width: 100px;
+        
+    }
+}
+
+@media (max-width:367px) {
+    .search-result-item .image-link {
+        max-height: 50px
+    }
+}
+
+.search-result-item .image {
+    max-width: 100%;
+    max-height: 10%;
+}
+
+.search-result-item .info {
+    margin-top: 2px;
+    font-size: 14px;
+    color: #999
+}
+
+.search-result-item .description {
+    font-size: 13px
+}
+
+.search-result-item+.search-result-item {
+    margin-top: 10px
+}
+
+@media (min-width:568px) {
+    .search-result-item-body {
+        margin-left: 200px
+    }
+}
+
+.search-result-item-heading {
+    font-weight: 400; 
+    font-size: 20px;
+    color:rgb(54, 127, 216)
+    
+}
+
+.search-result-item-heading>a {
+    color: #555
+}
+
+@media (min-width:568px) {
+    .search-result-item-heading {
+        margin: 0
+    }
+}
+.vl {
+  border-left: 2px solid rgba(67, 70, 67, 0.406);
+  height: 65px;
+}
+
+div.dropdown-menu.open{
+  max-height: 314px !important;
+  overflow-x: auto;
+}
+ul.dropdown-menu.inner{
+  max-height: 260px !important;
+  max-width: 460px !important;
+  overflow-y: auto;
+}
+
+.table-hover tbody tr:hover td {
+    background: rgb(151, 157, 157,0.9);
+}
+.panel {
+  cursor: pointer;
+}
+.numberCircle {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    padding: 5px;
+
+    background: #fff;
+    border: 2px solid rgb(12, 216, 43);
+    color: #666;
+    text-align: center;
+
+    font: 20px Arial, sans-serif;
+}
+
+</style>
+</head>
+<body>
+
+<div id ="page">
+  <div id="myNav" class="overlay">
+    <div class="overlay-content1">
+      <span style="color:white; font-size:9.0pt" > 
+       
+          {{!-- header banner  --}}
+                  <table border=0>
+                      <tr  >
+                        <td width="2%">
+                          
+                            <p><img src="images/vk.jpeg" height=100px width=100px /></p>
+                          
+                        </td>
+                        <td width="1%">
+                          
+                        </td>
+                        
+                        <td width=10% style="vertical-align:top ;">
+                          <table border=0>
+                            <tr>
+                              <td style="vertical-align:top ;">
+                                <b>Name: </b>  
+                                {{#each response.patient.patientNames}}
+                                  {{this.text}}
+                                {{/each}}
+                              </td>
+                              </tr>
+                              <tr>
+                                <td style="vertical-align:top ;">
+                                <b>DOB: </b> {{response.patient.birthdate}}
+                              </td>
+                              </tr>
+                              <tr>
+                                <td style="vertical-align:top ;">
+                                <b>Gender: </b> {{response.patient.gender}}
+                              </td>
+                              </tr>
+                              {{#each response.patient.patientContacts}}
+                              {{#eq this.system 'phone'}}
+                              <tr>
+                                <td style="vertical-align:top ;">
+                                <b>phone: </b> {{this.value}}
+                              </td>
+                              </tr>
+                              {{/eq}}
+                              {{#eq this.system 'email'}}
+                              <tr>
+                                <td style="vertical-align:top ;">
+                                <b>email: </b> {{this.value}}
+                              </td>
+                              </tr>
+                              {{/eq}}
+                              {{/each}}
+                              
+                            </tr>
+                          </table>
+                        </td>
+
+                        <td width=10% style="vertical-align:top ;">
+                          <table>
+                            <tr>
+                              <td style="vertical-align:top ;">
+                                <b>Address: </b> 
+                                {{#each response.patient.patientAddresses}}
+                                ({{this.use}})
+                                <br>  {{this.line1}} <br> 
+                                {{this.line2}} <br> {{this.line3}}
+                                {{/each}}
+                              </td>
+                              </tr>
+                            
+                          </table>
+                        </td>
+                        <td width=70% style="vertical-align:top ;"><h1> Welcome to MyChart </h1></td>
+                        <td width=2% style="vertical-align:top ;"> <h5>POWERED BY</h5>
+                        <p><img src="images/tendo-logo.png" height=25px width=100px /></p>
+                        </td>
+                      </tr>
+                  </table>
+      </span>
+    </div>
+  </div>
+
+  <br><br><br><br>
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title"
+              data-toggle="collapse" 
+              data-target="#collapseOne">
+              Your Recent Appointment - {{response.patientAppointment.startAt}} ({{response.patientAppointment.status}}) 
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table>
+              <tr>
+                <td  width=15%>
+                  <span style="font-family:ubuntu, Helvetica, sans-serif; text-align: center;font-size: 110%; color:rgb(134, 138, 132)">Physician Details</span>
+                </td>
+                <td colspan="4"> <b> Physician Name : </b>   
+                {{#each response.provider.providerNames}} 
+                  {{this.familyName}}, {{this.givenName}}
+                  {{/each}}
+
+                </td>
+                <td height="35px"></td>
+              </tr>
+              <tr>
+                <tr>
+                <td>
+                  <span style="font-family:ubuntu, Helvetica, sans-serif; text-align: center;font-size: 110%; color:rgb(134, 138, 132)">Visit Details </span>
+                </td>
+                  <td> <b> Visit T : </b>   {{response.patientAppointment.type}}</td>
+                  <td  width=1%></td>
+                <td> <b> Visit Start Time :  </b>   {{response.patientAppointment.startAt}} </td>
+                <td  width=1%></td>
+                <td> <b> Visit End Time :  </b>    {{response.patientAppointment.endAt}}</td>
+                <td height="35px"></td>
+              </tr>
+              <tr>
+
+                  <tr>
+                <tr>
+                <td>
+                  <span style="font-family:ubuntu, Helvetica, sans-serif; text-align: center;font-size: 120%; color:rgb(134, 138, 132)">Diagnosis Details</span>
+                </td>
+                  <td width=25%> <b> Diagnosis Name : </b> 
+                  {{#each response.patientDiagnoses.patientDiagnosisCodings}} &nbsp;&nbsp;
+                  {{this.name}}
+                  {{/each}}
+                  </td>
+                  <td  width=1%></td>
+                <td> <b> Diagnosis Status : </b>  {{response.patientDiagnoses.status}}</td>
+                <td  width=1%></td>
+                <td> <b> Last Updated Time :  </b>    {{response.patientDiagnoses.lastUpdatedAt}}</td>
+                <td height="35px"></td>
+              </tr>
+              <tr><td colspan="7"><hr></td></tr>
+              <tr>
+              
+                
+              <td  colspan="5">
+                <span style="font-family:ubuntu, Helvetica, sans-serif; text-align: center;font-size: 120%; color:rgb(134, 138, 132)">
+                You have not provided a feedback yet. Its important for us to hear your feedback about your recent visit.</span>
+                <br> 
+                <button id="start" type="button" class="btn btn-success  text-right start">Start</button>
+                <hr>
+                <div id="divq1">
+                  <span style="font-family:ubuntu, Helvetica, sans-serif; text-align: center;font-size: 110%; color:rgb(134, 138, 132)">
+                    Hi 
+                    {{#each response.patient.patientNames}}
+                      {{this.givenName}}
+                    {{/each}}, on a scale of 1-10, would you recommend Dr. 
+                    {{#each response.provider.providerNames}} 
+                        {{this.familyName}}
+                      {{/each}} to a friend or family member? 1 = Would not recommend, 10 = Wound strongly recommend <br>
+                  </span> 
+                    
+                      <label class="radio-inline"><input value="1" type="radio" name="q1">1</label>
+                      <label class="radio-inline"><input value="2" type="radio" name="q1" >2</label>
+                      <label class="radio-inline"><input value="3" type="radio" name="q1" >3</label>
+                      <label class="radio-inline"><input value="4" type="radio" name="q1" >4</label>
+                      <label class="radio-inline"><input value="5" type="radio" name="q1" >5</label>
+                      <label class="radio-inline"><input value="6" type="radio" name="q1" >6</label>
+                      <label class="radio-inline"><input value="7" type="radio" name="q1" >7</label>
+                      <label class="radio-inline"><input value="8" type="radio" name="q1" >8</label>
+                      <label class="radio-inline"><input value="9" type="radio" name="q1" >9</label>
+                      <label class="radio-inline"><input value="10" type="radio" name="q1" >10</label>
+                </div>
+                <br>
+                  <div id="divq2">
+                  <span style="font-family:ubuntu, Helvetica, sans-serif; text-align: center;font-size: 110%; color:rgb(134, 138, 132)">
+                    Thank you, you were diagnosed with 
+                    {{#each response.patientDiagnoses.patientDiagnosisCodings}}
+                  {{this.name}}
+                  {{/each}}. Did Dr.  
+                    {{#each response.provider.providerNames}} 
+                      {{this.familyName}}
+                    {{/each}} explain how to manage this diagnosis in a way you could understand? <br>
+                  </span> 
+                     
+                      <label class="radio-inline"><input value="yes" type="radio" name="q2">Yes</label>
+                      <label class="radio-inline"><input value="no" type="radio" name="q2" >No</label>
+                      
+                </div>
+                <br>
+                <div id="divq3">
+                  <span style="font-family:ubuntu, Helvetica, sans-serif; text-align: center;font-size: 110%; color:rgb(134, 138, 132)">
+                    We appreciate the feedback, one last question: how do you feel about being diagnosed with 
+                    {{#each response.patientDiagnoses.patientDiagnosisCodings}}
+                  {{this.name}}
+                  {{/each}}? <br>
+                  </span> 
+                  <textarea id="q3" class="form-control query" rows = "3" aria-label="With textarea">
+                    {{#each feedbacks}}{{#eq this.questionnaireId '3'}}{{this.value}}{{/eq}}{{/each}}
+                  </textarea>
+                    
+                      <br> 
+                      <button id="submit" type="button" class="btn btn-success  text-right submit">Submit</button>
+                      <hr>
+                </div>
+                
+              </td>
+              
+            </table>
+             <div class="alert alert-success alert-dismissible" role="alert" id="alert_success_feedback">
+              <div id="feedback_details_message"> </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="panel-heading">
+          <h4 class="panel-title"
+              data-toggle="collapse" 
+              data-target="#collapseTwo">
+              Your Prior Appointments 
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            You don't have any prior appointments.
+          </div>
+        </div>
+    </div>
+    
+  </div>
+
+</div>
+  <div id="login" class="alert alert-dark" style=" position: absolute; top: 250px; left: 740px; z-index: 200; height:400px; width:400px">
+    <p><img src="images/tendo-logo.png" height=25px width=100px /></p> <br>
+    
+    <div class="form-group">
+      <label for="exampleInputEmail1">User Id</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+  
+    <button id="login-sumbit" type="submit" class="btn btn-primary">Submit</button>
+
+    <p> or sign in with an alternative...</p>
+    <table>
+      <tr>
+        <td>
+          <button class="btn btn-default">
+            <img src="images/facebook.jpeg" width="20" />  Facebook
+          </button>
+        </td>
+        <td width="20px"></td>
+        <td>
+        <button class="btn btn-default">
+            <img src="images/google.jpeg" width="20" />  Google
+          </button>
+          </td>
+          <td width="20px"></td>
+          <td>
+
+          <button class="btn btn-default">
+            <img src="images/apple.jpeg" width="20" />  Apple
+          </button>
+        </td>
+      </tr>
+      <tr><td colspan="4" height="10px"></td></tr>
+      <tr>
+      
+        
+        <td colspan="3" >
+        <button class="btn btn-default">
+            <img src="images/microsoft.png" width="20" />  Microsoft
+          </button>
+          </td>
+      </tr>
+    </table>
+  
+  </div>
+<script>
+
+document.getElementById("myNav").style.height = "9%";
+
+function openNav() {
+  $('#user_query_list').css('display','none');
+  $('#query_parameters').show();
+  document.getElementById("myNav").style.height = "85%";
+  if($('#icon_up_down_indicator').hasClass("fa-angle-double-up")){
+      $('#icon_up_down_indicator').removeClass("fa-angle-double-up").addClass("fa-angle-double-down");
+    }
+}
+
+function opencloseNav(value) {
+ 
+  if(value === "params"){
+    if(document.getElementById("myNav").style.height === "9%"){
+      document.getElementById("myNav").style.height = "85%"
+      $('#user_query_list').css('display','none');
+      $('#query_parameters').show();
+      if($('#icon_up_down_indicator').hasClass("fa-angle-double-up")){
+        $('#icon_up_down_indicator').removeClass("fa-angle-double-up").addClass("fa-angle-double-down");
+      }
+      if($('#icon_up_down_indicator').hasClass("fa-angle-double-down")){
+        $('#icon_up_down_indicator').removeClass("fa-angle-double-down").addClass("fa-angle-double-up");
+      }
+    }else {
+      document.getElementById("myNav").style.height = "9%"
+    }
+    
+
+  }
+
+  if(value === "query"){
+    if(document.getElementById("myNav").style.height === "9%"){
+      document.getElementById("myNav").style.height = "85%"
+      $('#query_parameters').css('display','none');
+    $('#user_query_list').show();
+    }else{
+      document.getElementById("myNav").style.height = "9%"
+    }
+  }
+}
+function closeNav() {
+  document.getElementById("myNav").style.height = "9%";
+  if($('#icon_up_down_indicator').hasClass("fa-angle-double-down")){
+      $('#icon_up_down_indicator').removeClass("fa-angle-double-down").addClass("fa-angle-double-up");
+    }
+}
+
+</script>
+</body>
+</html>

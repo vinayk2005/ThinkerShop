@@ -1,0 +1,33 @@
+{
+  "name": "onboardingtool",
+  "version": "1.0.0",
+  "description": "node server used to perform the terraform onboarding events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "VK",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.4.16",
+    "aws-sdk": "^2.944.0",
+    "bootstrap-checkbox": "^1.5.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars-helpers": "^0.10.0",
+    "hashmap": "^2.4.0",
+    "hbs": "^4.1.1",
+    "hex-to-rgba": "^2.0.1",
+    "jira-client": "^6.16.0",
+    "jsonschema": "^1.2.11",
+    "loads": "0.0.4",
+    "locallydb": "0.0.9",
+    "moment": "^2.24.0",
+    "multer": "^1.4.2",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.4.5",
+    "properties-reader": "^2.1.1",
+    "simple-node-logger": "^18.12.24",
+    "uuid": "^8.1.0"
+  }
+}

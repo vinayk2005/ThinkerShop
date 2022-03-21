@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<meta http-equiv="refresh" content="600"> -->
+<head>
+    <title> MY CHART LOGS &#174;</title>
+  <link rel = "icon" href = "images/favicon-32x32.png" type = "image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/../javascripts/logs.js"></script>
+
+</head>
+<body>
+
+  <nav class="navbar" style="background-color: #e9aa62;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="" >My Chart Logs</a>
+      </div>
+    </div>
+  </nav>
+  
+<table height=100% width=100% border="1" >
+
+    <tr height=100%>
+        <td style="text-align: center; vertical-align: top;" height=100% width=10%>
+            <table align="top" width=100% border="1">
+                <tr>
+                    <td align="top" height=1%>
+                        <strong> Log Files </strong>
+                    </td>
+                </tr>
+                {{#each logFileNames}}
+                    <tr>
+                        <td height=1%>
+                            {{!-- <a id="{{this}}" href="{{this}}" >{{this}}</a> --}}
+                            <a style="cursor: pointer;" class=" btn-default" id={{this}}><span class="glyphicon glyphicon-file"> {{this}}</span></a>
+                        </td>
+                    </tr>            
+                {{/each}}
+            </table>
+        </td>
+        <td width=100%>
+            <iframe name="log_content" id="log_content" style="position: relative; width: 99%; height: 900px; z-index: 100;" frameborder="0" scrolling="yes"></iframe>
+        </td>
+    </tr>
+  
+   
+  
+</table>
+
+
+
+</body>
+</html>

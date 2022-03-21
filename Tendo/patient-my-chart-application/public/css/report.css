@@ -1,0 +1,393 @@
+/* popup for Delete operation*/
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 660px;
+  background-color: #666;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 150%;
+  margin-left: -680px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 75%; 
+
+  margin-left: -15px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/*////////////*/
+
+
+
+/* popup for Delete operation*/
+.tokenpopup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.tokenpopup .tokenpopuptext {
+  visibility: hidden;
+  width: 360px;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -265px;
+}
+
+/* Popup arrow */
+.tokenpopup .tokenpopuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  margin-left: 150px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.tokenpopup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+
+
+/*////////////*/
+
+
+
+/* Popup for JIRA comment operation */
+
+.popupcomment {
+  position: relative;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popupcomment .popuptextcomment {
+  visibility: hidden;
+  width: 358px;
+  background-color: #666;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 10;
+  top: 125%;
+  left: 20%;
+  margin-left: -72px;
+  margin-top: -85px;
+}
+
+
+
+/* Toggle this class - hide and show the popup */
+.popupcomment .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+textarea {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border:solid 1px #ccc;
+}
+
+.glyphicon.spinning {
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+.list-group{
+  max-height: 200px;
+  margin-bottom: 5px;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.btn-red{background-color: #F4883F ;color: white;}
+.btn-red:hover{color: black;}
+pre {
+  outline: 1px solid #ccc;
+  padding: 5px; margin:
+  5px;
+}
+
+
+.containerdiv {
+  border: 0;
+  float: left;
+  position: relative;
+  width: 300px;
+}
+.starimage {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+ }
+ img{
+   max-width: 300px;
+ }
+ .sticky {
+   position: absolute;
+   top: 47px;
+   left: 550px;
+   z-index: 200;
+   transform: rotate(3deg);
+   width: 675px;
+   min-height: 60px;
+   margin: -10px 10px 10px;
+   padding: 10px;
+   font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Comic Neue", cursive;
+   font-size: 14px;
+   color: #000;
+   background: rgba(255, 255, 51, 0.7);
+   box-shadow: -2px 2px 2px rgba(0,0,0,0.4);
+ }
+ .sticky:before, .sticky:after {
+   content: "";
+   display: block;
+   position: absolute;
+   width: 16px;
+   height: 16px;
+   top: 0;
+   right: 0;
+ }
+ .sticky:before {
+   border-top: solid 8px #fff;
+   border-right: solid 8px #fff;
+   border-left: solid 8px transparent;
+   border-bottom: solid 8px transparent;
+ }
+ .sticky:after {
+   border-bottom: solid 8px #dddd33;
+   border-left: solid 8px #dddd33;
+   border-right: solid 8px transparent;
+   border-top: solid 8px transparent;
+ }
+ .iffyTip {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.hideText2{
+  max-width:200px;
+}
+.divscroll {
+  width: 100%;
+  height: 920px;
+  overflow: visible;
+  z-index: 9;
+}
+.tooltip {
+    position: fixed;
+}
+/* .wj-treeview {
+    height: 250px;
+    font-size: 120%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 3px;
+    background: #f0f0f0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+body {
+  margin-bottom: 240pt;
+} */
+body{
+  margin-top:20px;
+  background:#FAFAFA;
+}
+.product-card {
+  color: #fff;
+}
+
+.bg-c-blue {
+  background: linear-gradient(45deg,#4099ff,#021f3f);
+}
+
+.bg-c-green {
+  background: linear-gradient(45deg,#2ed8b6,#02483a);
+}
+
+.bg-c-yellow {
+  background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+  background: linear-gradient(45deg,#FF5370,#4e020e);
+}
+
+.bg-c-purple {
+  background: linear-gradient(45deg,  #772251,#de30c6);
+}
+
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+  box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+  border: none;
+  margin-bottom: 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+  padding: 25px;
+  width: 300px;
+  height:140px;
+  transition: box-shadow .3s;
+}
+.card:hover {
+  box-shadow: 1px 1px 11px rgba(6, 5, 5, 0.995); 
+}
+
+.product-card i {
+  font-size: 26px;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+.disable-scrollbars::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Chrome/Safari/Webkit */
+}
+
+.disable-scrollbars {
+scrollbar-width: none; /* Firefox */
+-ms-overflow-style: none;  /* IE 10+ */
+}
+
+.hoverTable{
+  width:100%; 
+  border-collapse:collapse; 
+}
+
+/* Define the default color for all the table rows */
+.hoverTable tr{
+  background: #444;
+}
+/* Define the hover highlight color for the table row */
+  .hoverTable tr:hover {
+        background-color: #868682;
+  }
+  .hoverTable tr:first-child:hover {
+    background-color:  #444;
+}
+
+/* Bouncing arrow*/
+
+
+
+.arrow {
+  text-align: center;
+  margin: 8% 0;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-40px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
